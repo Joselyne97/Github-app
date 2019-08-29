@@ -16,23 +16,18 @@ const routes: Routes = [
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserRequestService } from './user-http/user-request.service';
-import { GithubComponent } from './github/github.component';
-//import { GithubFormComponent } from './github-form/github-form.component';
+
 import { UserComponent } from './user/user.component';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DateCountPipe } from './date-count.pipe';
-//import {HttpClientModule} from '@angular/common/http';
 import{RoutingModule} from './routing/routing.module';
 import { HighlightDirective } from './highlight.directive';
-//import{RouterModule,Routes} from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
-    //GitFormComponent,
-    GithubComponent,
-    //GithubFormComponent,
     UserComponent,
     AboutComponent,
     NavbarComponent,
