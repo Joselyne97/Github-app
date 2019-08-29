@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Github</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Github Home <span class="sr-only">(current)</span></a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="#">GitHub Repos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Github Users</a>
+        </li>
+  
+        <li class="nav-item">
+          <form class="search-form">
+  
+            <input type="text" placeholder="Enter Github Username" [(ngModel)]="userName" name="userName" (keyup)="searchUser()">
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="jumbotron">
+    <div *ngIf="response">
+      <h1 class="display-3" appHighlight> Username: {{response.login}} </h1>
+      <p class="lead">Profile Picture
+        <br>
+        <br>
+        <img class="img-responsive profile-img img-thumbnail" src="{{response.avatar_url}}"></p>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Company: {{response.company}}
+          <span class="badge badge-primary badge-pill">Number Of Followers: {{response.followers}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Number Of Followings: {{response.following}}
+          <span class="badge badge-primary badge-pill">Biography: {{response.bio}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center"> Location: {{response.location}}
+          <span class="badge badge-primary badge-pill">1</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center"> Public Repos: {{response.public_repos}}
+          <span class="badge badge-primary badge-pill">View Repositories</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center"> Public Gists: {{response.public_gists}}
+          <span class="badge badge-primary badge-pill">1</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Available for hire: {{response.hireable}}
+          <span class="badge badge-primary badge-pill">Yes</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngIf="response.name">
+          Name: {{response.name | uppercase}}
+          <span class="badge badge-primary badge-pill">Click To See Profile</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngIf="response.email">
+          Email: {{response.email}}
+          <span class="badge badge-primary badge-pill">Contact Melissa</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngIf="response.created_at">
+          Created at {{response.created_at}}
+          <span class="badge badge-primary badge-pill">June 2014</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngIf="response.updated_at">
+          Joined Github On: {{response.updated_at|date:short:timezone}}
+          <span class="badge badge-primary badge-pill">August 2018</span>
+        </li>
+      </ul>
+      <!-- REPOSITORIES -->
+  
+      <div *ngFor="let repo of reporesponse, let i=index">
+        <div class="card border-primary mb-3" style="max-width: 80rem;">
+          <div class="card-header">{{reporesponse[i].name}}</div>
+          <div class="card-body">
+            <h4 class="card-title">Primary card title</h4>
+            <p class="card-text">{{reporesponse[i].description}}</p>
+          </div>
+        </div>
+        <!-- <div id="body">
+          <nav class="navbar navbar-dark bg-primary mt-5 fixed-bottom text-dark">
+            <div class="navbar-expand m-auto navbar-text text-dark">
+              Made by <a href="https://twitter.com/melisamalala">Melissa Malala</a>
+            </div>
+          </nav>
+        </div> -->
