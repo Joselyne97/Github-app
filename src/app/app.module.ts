@@ -9,6 +9,8 @@ import { GithubComponent } from './github/github.component';
 import { GithubFormComponent } from './github-form/github-form.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AboutComponent } from './about/about.component';
     GithubComponent,
     GithubFormComponent,
     UserFormComponent,
-    AboutComponent
+    AboutComponent,
+    NavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
