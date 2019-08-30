@@ -24,8 +24,10 @@ export class UserRequestService {
       following:number;
       public_repos:number;
       html_url:string;
+      
      
     }
+
     let promise =new Promise((resolve,reject)=>{
       this.http.get<ApiResponse>('https://api.github.com/users/' + userName).toPromise().then(response=>{
           
@@ -36,11 +38,12 @@ export class UserRequestService {
           this.user.following=response.following
           this.user.public_repos=response.public_repos
           this.user.html_url=response.html_url
+         
         
           resolve()
       },
       error=>{
-              this.user.name="Never, never, never give up."
+              this.user.name="Sorry the user name can not be found!"
               this.user.avatar_url="winston churchill"
               reject(error)
           }

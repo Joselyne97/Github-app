@@ -17,8 +17,6 @@ export class HighlightDirective {
   private background(action:string){
     this.elem.nativeElement.style.background=action;
 
-  }
-
-  
+  } 
 
 }

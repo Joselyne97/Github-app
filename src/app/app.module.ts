@@ -6,7 +6,6 @@ import{RouterModule,Routes} from '@angular/router';
 
 const routes: Routes = [
   {path: 'user', component: UserComponent},
-  // {path: 'repository', component: RepositoryComponent},
   {path: 'about', component: AboutComponent},
   {path:  '', redirectTo: '/user', pathMatch: 'full'},
   {path: '**', component: NotFoundComponent}
