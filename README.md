@@ -1,27 +1,35 @@
-# GithubApp
+## Project name:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+Github app search user
 
-## Development server
+## Author:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Joselyne MPAYIMANA
 
-## Code scaffolding
+## Contact information:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Tel: (250)787753215;
+2. Email: joselynejojo740@gmail.com;
+3. Facebook: Joselyne M.JOJO;
+4. LinkedIn: Joselyne MPAYIMANA;
 
-## Build
+## Project description:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+ We were required to Create a website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories.
 
-## Running unit tests
+ ## Technology used:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ 1. Angular js
+ 2. Node js
+ 3. Html
+ 4. Typescript
 
-## Running end-to-end tests
+ 
+ ## The link to live site on GitHub Pages is :
+ 
+ https://joselyne97.github.io/Quotess/
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+ ## Copyright and license information:
 
-## Further help
+ &#9400; Made in August.2019, by Jo
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
