@@ -3,7 +3,7 @@ import {UsersService} from '../user-service/users.service';
 
 import {UserRequestService} from '../user-http/user-request.service';
 import {User} from '../user-class/user';
-import {Repository} from '../repository-class/repository'
+//import {Repository} from '../repository-class/repository'
 
 @Component({
   selector: 'app-user',
@@ -14,7 +14,7 @@ import {Repository} from '../repository-class/repository'
 export class UserComponent implements OnInit {
 
   user:User;
-  repository:Repository;
+  //repository:Repository;
 
   userName=""
   constructor(private usersService:UserRequestService){
@@ -29,6 +29,6 @@ export class UserComponent implements OnInit {
       this.usersService.userRequest('Joselyne97')
            
       this.user=this.usersService.user
-      this.repository=this.usersService.repository
+      // this.repository=this.usersService.repository
   }  
   }

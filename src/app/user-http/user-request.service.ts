@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {User}from '../user-class/user'
-import {Repository} from '../repository-class/repository'
+//import {Repository} from '../repository-class/repository'
 //import{DateCountPipe} from '../date-count.pipe'
 
 @Injectable({
@@ -9,11 +9,11 @@ import {Repository} from '../repository-class/repository'
 })
 export class UserRequestService {
   user:User;
-repository:Repository;
+//repository:Repository;
 
   constructor(private http:HttpClient) {
     this.user=new User("","","",0,0,0,"",new Date())
-    this.repository= new Repository("","")
+    //this.repository= new Repository("","")
    }
    userRequest(userInput){
   
@@ -48,7 +48,7 @@ repository:Repository;
       },
       error=>{
               this.user.name="Sorry the user name can not be found!"
-              this.user.avatar_url="??????????????????????????????????"
+              this.user.avatar_url="??????????????????????"
 
               reject(error)
           }
