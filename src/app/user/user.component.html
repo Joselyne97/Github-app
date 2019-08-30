@@ -1,8 +1,8 @@
-<h1 style="margin-left: 200px;">The github user's Data</h1>
+<h1 style="margin-left: 300px;">The github user's Data</h1><br><br><br>
 <div class="container">
     <div class="form-group">
         
-        <label for="name"><u>Search The github user here</u>:</label>
+        <label for="name"><h4><u>Search The github user here:</u></h4></label>
         <input type="text" name="githubUser" placeholder="Type the Github Username" [(ngModel)]="userName" (keyup)="searchUser()">
         <button (click)="submitUser()">Search</button>
     </div>
@@ -16,11 +16,11 @@
             <br><br>
             
             <footer>
-              <cite><u> Location</u>:{{user.location}} <br><br>
-                <u>Followers</u>:{{user.followers}}<br><br>
-                <u>Following:</u>{{user.following}}<br><br>
-                <u>Repositories Number</u>:{{user.public_repos}}<br><br>
-                <a href="{{user.html_url}}" target="_blank">Link to GitHub</a><br><br>
+              <cite><h4><u> Location</u>:{{user.location}} </h4><br><br>
+                <h4><u>Followers</u>:{{user.followers}}</h4><br><br>
+                <h4><u>Following:</u>{{user.following}}</h4><br><br>
+                <h4><u>Repositories Number</u>:{{user.public_repos}}</h4><br><br>
+                <a href="{{user.html_url}}" target="_blank">Click here to see the repositories's details!</a><br><br>
                 
                 
               </cite>
