@@ -3,7 +3,7 @@
     <div class="form-group">
         
         <label for="name"><u>Search The github user here</u>:</label>
-        <input type="text" name="githubUser" placeholder="Type the Github Username" [(ngModel)]="userName">
+        <input type="text" name="githubUser" placeholder="Type the Github Username" [(ngModel)]="userName" (keyup)="searchUser()">
         <button (click)="submitUser()">Search</button>
     </div>
   
@@ -20,7 +20,7 @@
                 <u>Followers</u>:{{user.followers}}<br><br>
                 <u>Following:</u>{{user.following}}<br><br>
                 <u>Repositories Number</u>:{{user.public_repos}}<br><br>
-                <!-- <a href="{{user.html_url}}" target="_blank">Link to GitHub</a><br><br> -->
+                <a href="{{user.html_url}}" target="_blank">Link to GitHub</a><br><br>
                 
                 
               </cite>
@@ -29,7 +29,10 @@
           </ul>
         </blockquote>
          
-       
+        <!-- <div *ngFor="let repo of reporesponse, let i=index">
+          <p>{{reporesponse[i].name}}</p>
+          <p>{{reporesponse[i].description}}</p>
+        </div> -->
     
    
     <p><u>Pipe</u>: <u>Data requested on</u>: {{user.completeDate|date|date :"fullDate"|uppercase}} at Timezone: {{user.completeDate|date|date :"mediumTime"}} </p><br>
