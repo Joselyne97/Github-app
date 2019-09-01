@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {User}from '../user-class/user'
-//import {Repository} from '../repository-class/repository'
+import {Repository} from '../repository-class/repository'
 //import{DateCountPipe} from '../date-count.pipe'
 
 @Injectable({
@@ -9,11 +9,13 @@ import {User}from '../user-class/user'
 })
 export class UserRequestService {
   user:User;
-//repository:Repository;
+  repository:Repository;
+  all: Repository[];
 
   constructor(private http:HttpClient) {
     this.user=new User("","","",0,0,0,"",new Date())
-    //this.repository= new Repository("","")
+   this.repository= new Repository("","")
+   this.all=[];
    }
    userRequest(userInput){
   
@@ -57,5 +59,40 @@ export class UserRequestService {
 
   return promise
   
+}
+
+repositoryrequest(userInput){
+  
+  var userName=userInput;
+  
+  interface ApiReposito{
+    name:string;
+    description:string;
+    
+    
+   
+  }
+
+  let promises =new Promise((resolve,reject)=>{
+    this.http.get<ApiReposito>('https://api.github.com/users/'+userName+'/repos').toPromise().then(response=>{
+        
+        //this.repository.name=response.name
+        //this.repository.description=response.description
+       for(let counter in response){
+         this.all.push(response[counter])
+       }
+      
+        resolve()
+    },
+    error=>{
+            this.repository.name="Sorry the repository can not be found!"
+            this.repository.description="??????????????????????"
+
+            reject(error)
+        }
+    )
+})
+
+return promises
 }
 }
