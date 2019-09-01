@@ -16,15 +16,21 @@
             <br><br>
             
             <footer>
-              <cite><h4><u> Location</u>:{{user.location}} </h4><br><br>
+              <cite>
+                <div class="row">
+                  <div class="col-md-6">
+                <h4><u> Location</u>:{{user.location}} </h4><br><br>
                 <h4><u>Followers</u>:{{user.followers}}</h4><br><br>
                 <h4><u>Following:</u>{{user.following}}</h4><br><br>
                 <h4><u>Repositories Number</u>:{{user.public_repos}}</h4><br><br>
                 <a href="{{user.html_url}}" target="_blank">Click here to see the repositories's details!</a><br><br>
-              
-                <u ngFor="repository of Repository">{{repository.name}}</u><br><br>
-                <u>{{repository.description}}</u>
-              </cite>
+              </div>
+              <div class="col-md-6">
+                <p ngFor="repository of Repository">{{repository.repos}}</p><br><br>
+                <p>{{repository.description}}</p>
+              </div>
+            </div>
+            </cite>
             </footer>
             </li>
           </ul>

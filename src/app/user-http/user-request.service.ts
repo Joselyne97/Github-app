@@ -10,12 +10,12 @@ import {Repository} from '../repository-class/repository'
 export class UserRequestService {
   user:User;
   repository:Repository;
-  all: Repository[];
+  //all: Repository[];
 
   constructor(private http:HttpClient) {
     this.user=new User("","","",0,0,0,"",new Date())
    this.repository= new Repository("","")
-   this.all=[];
+   //this.all=[];
    }
    userRequest(userInput){
   
@@ -76,11 +76,11 @@ repositoryrequest(userInput){
   let promises =new Promise((resolve,reject)=>{
     this.http.get<ApiReposito>('https://api.github.com/users/'+userName+'/repos').toPromise().then(response=>{
         
-        //this.repository.name=response.name
-        //this.repository.description=response.description
-       for(let counter in response){
-         this.all.push(response[counter])
-       }
+        this.repository.name=response.name
+        this.repository.description=response.description
+      //  for(let counter in response){
+      //    this.all.push(response[counter])
+      //  }
       
         resolve()
     },

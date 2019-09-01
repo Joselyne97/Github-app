@@ -13,7 +13,7 @@ const routes:Routes=[
   {path:"user",component:UserComponent},
   {path:"about",component:AboutComponent},
   {path:"",redirectTo:"/user",pathMatch:"full"},
-  {path: 'user/:id', component: UserComponent},
+  //{path: 'user/:id', component: UserComponent},
   {path:'**',component:NotFoundComponent}
 ]
 

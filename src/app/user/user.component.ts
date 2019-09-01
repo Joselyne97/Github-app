@@ -4,6 +4,7 @@ import {UsersService} from '../user-service/users.service';
 import {UserRequestService} from '../user-http/user-request.service';
 import {User} from '../user-class/user';
 import {Repository} from '../repository-class/repository'
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-user',
@@ -22,6 +23,7 @@ export class UserComponent implements OnInit {
   }
   submitUser(){
          this.usersService.userRequest(this.userName)
+         this.usersService.repositoryrequest(this.userName)
          
 }
   ngOnInit() {
