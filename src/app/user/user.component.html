@@ -26,8 +26,9 @@
                 <a href="{{user.html_url}}" target="_blank">Click here to see the repositories's details!</a><br><br>
               </div>
               <div class="col-md-6">
-                <p ngFor="repository of Repository">{{repository.repos}}</p><br><br>
-                <p>{{repository.description}}</p>
+                <ul>
+                  <li *ngFor="let repo of repository">{{repo.name}} <br>{{repo.description}} <br><br></li>
+              </ul>
               </div>
             </div>
             </cite>

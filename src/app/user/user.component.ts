@@ -15,7 +15,7 @@ import { environment } from '../../environments/environment';
 export class UserComponent implements OnInit {
 
   user:User;
-  repository:Repository;
+  repository:Repository[];
 
   userName=""
   constructor(private usersService:UserRequestService){
@@ -33,5 +33,6 @@ export class UserComponent implements OnInit {
            
       this.user=this.usersService.user
       this.repository=this.usersService.repository
+      console.log(this.repository)
   }  
   }

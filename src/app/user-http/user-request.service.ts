@@ -3,18 +3,18 @@ import {HttpClient} from '@angular/common/http'
 import {User}from '../user-class/user'
 import {Repository} from '../repository-class/repository'
 //import{DateCountPipe} from '../date-count.pipe'
-
+import {environment} from '../../environments/environment'
 @Injectable({
   providedIn: 'root'
 })
 export class UserRequestService {
   user:User;
-  repository:Repository;
+  repository:Repository[];
   //all: Repository[];
 
   constructor(private http:HttpClient) {
     this.user=new User("","","",0,0,0,"",new Date())
-   this.repository= new Repository("","")
+   this.repository= []
    //this.all=[];
    }
    userRequest(userInput){
@@ -35,7 +35,7 @@ export class UserRequestService {
     }
 
     let promise =new Promise((resolve,reject)=>{
-      this.http.get<ApiResponse>('https://api.github.com/users/' + userName).toPromise().then(response=>{
+      this.http.get<ApiResponse>('https://api.github.com/users/' + userName+'?access_token='+ environment.apikey).toPromise().then(response=>{
           
           this.user.name=response.name
           this.user.avatar_url=response.avatar_url
@@ -74,19 +74,22 @@ repositoryrequest(userInput){
   }
 
   let promises =new Promise((resolve,reject)=>{
-    this.http.get<ApiReposito>('https://api.github.com/users/'+userName+'/repos').toPromise().then(response=>{
+    this.http.get<ApiReposito>('https://api.github.com/users/'+userName+'/repos?access_token='+ environment.apikey).toPromise().then(response=>{
+        for (var i in response){
+          console.log(i)
+          this.repository.push(new Repository(response[i].name,response[i].description))
+        }
         
-        this.repository.name=response.name
-        this.repository.description=response.description
+        // this.repository.description=response.description
       //  for(let counter in response){
       //    this.all.push(response[counter])
       //  }
-      
+      // console.log(this.repository)
         resolve()
     },
     error=>{
-            this.repository.name="Sorry the repository can not be found!"
-            this.repository.description="??????????????????????"
+            // this.repository.name="Sorry the repository can not be found!"
+            // this.repository.description="??????????????????????"
 
             reject(error)
         }
